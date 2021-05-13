@@ -10,7 +10,7 @@ const CategoriasProvider = (props) => {
     // Criar o state de Context
     const [categorias, guardarCategorias] = useState([])
 
-    // Executando o chamado de API
+    // Executando o chamado de API. API responsavel por puxar os tipos de categoria de drink.
     useEffect(() => {
         const obterCategorias = async () => {
             const url = `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`

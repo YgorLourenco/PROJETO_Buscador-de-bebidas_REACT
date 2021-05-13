@@ -16,6 +16,7 @@ const ReceitasProvider = (props) => {
 
     const {nome, categoria} = busca;
 
+    // API responsavel por mostrar os drinks baseado nos dados que o usuário deu sobre os drinks
     useEffect(() => {
 
         if(consultar) {
