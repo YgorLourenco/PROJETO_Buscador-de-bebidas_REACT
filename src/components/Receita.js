@@ -52,7 +52,7 @@ const Receita = ({receita}) => {
         for(let i = 1; i < 16; i++) {
             if(informacao[`strIngredient${i}`]) {
                 ingredientes.push(
-                    <li>{informacao[`strIngredients${i}`]} {informacao[`strMeasure${i}`]}</li>
+                    <li>{informacao[`strIngredient${i}`]} {informacao[`strMeasure${i}`]}</li>
                 )
             }
         }
@@ -73,6 +73,7 @@ const Receita = ({receita}) => {
                         onClick={() => {
                             guardarIdReceita(receita.idDrink)
                             handleOpen()
+                            // console.log(receita.idDrink)
                         }}
                     >
                         Ver Receita

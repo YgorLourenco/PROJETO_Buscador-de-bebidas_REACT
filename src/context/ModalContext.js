@@ -11,16 +11,17 @@ const ModalProvider = (props) => {
 
     // Uma vez que tenhamos uma receita, chamar a API. API responsavel pela receita dos drinks
     useEffect(() => {
-        const obterReceitas = async () => {
+        const obterReceita = async () => {
             if(!idreceita) return;
 
-            const url = `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idreceita}` 
+            const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idreceita}` 
 
             const resultado = await axios.get(url)
 
-            guardarReceita(resultado.data.drinks[0])
+            guardarReceita(resultado.data.drinks[0]);
+            console.log(resultado.data.drinks[0])
         }
-        obterReceitas()
+        obterReceita()
 
     }, [idreceita])
 

@@ -26,21 +26,22 @@ const ReceitasProvider = (props) => {
                 const resultado = await axios.get(url)
 
                 guardaReceitas(resultado.data.drinks)
+                // console.log(resultado.data.drinks)
     
             }
             obterReceitas()
         }
 
         
-    }, [busca])
+    }, [busca, categoria, consultar, nome])
 
     // Vai distribuir os States para outros componentes
     return ( 
         <ReceitasContext.Provider
             value={{
+                receitas,
                 buscarReceitas,
                 guardarConsultar,
-                receitas
             }}
         >
             {props.children}
